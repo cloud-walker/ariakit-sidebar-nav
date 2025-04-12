@@ -1,3 +1,41 @@
 export function App() {
-  return <>...</>
+  return (
+    <div className="main-layout">
+      <aside className="main-sidebar">
+        <nav>
+          <ul>
+            <li>
+              <a href="#">Banana</a>
+            </li>
+            <li>
+              <a href="#">Orange</a>
+            </li>
+            <li>
+              <button type="button">Berries</button>
+              <ul>
+                <li>
+                  <a href="#">Blueberry</a>
+                </li>
+                <li>
+                  <a href="#">Raspberry</a>
+                </li>
+                <li>
+                  <a href="#">Strawberry</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">Apple</a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+      <main>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos enim ea
+        qui delectus quibusdam iure fugiat voluptatem cum excepturi
+        necessitatibus blanditiis ab aliquid inventore, impedit numquam
+        explicabo quam accusantium fugit.
+      </main>
+    </div>
+  )
 }
