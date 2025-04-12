@@ -9,33 +9,45 @@ export function App() {
           <A.CompositeProvider>
             <A.Composite render={<ul />}>
               <li>
-                <A.CompositeItem render={<a href="#" />}>
+                <A.CompositeItem render={<a href="#" />} className="nav-item">
                   Banana
                 </A.CompositeItem>
               </li>
               <li>
-                <A.CompositeItem render={<a href="#" />}>
+                <A.CompositeItem render={<a href="#" />} className="nav-item">
                   Orange
                 </A.CompositeItem>
               </li>
               <li>
                 <A.DisclosureProvider>
-                  <A.Disclosure render={<A.CompositeItem />}>
+                  <A.Disclosure
+                    render={<A.CompositeItem />}
+                    className="nav-disclosure"
+                  >
                     Berries
                   </A.Disclosure>
                   <A.DisclosureContent render={<ul />} unmountOnHide>
                     <li>
-                      <A.CompositeItem render={<a href="#" />}>
+                      <A.CompositeItem
+                        render={<a href="#" />}
+                        className="nav-subitem"
+                      >
                         Blueberry
                       </A.CompositeItem>
                     </li>
                     <li>
-                      <A.CompositeItem render={<a href="#" />}>
+                      <A.CompositeItem
+                        render={<a href="#" />}
+                        className="nav-subitem"
+                      >
                         Raspberry
                       </A.CompositeItem>
                     </li>
                     <li>
-                      <A.CompositeItem render={<a href="#" />}>
+                      <A.CompositeItem
+                        render={<a href="#" />}
+                        className="nav-subitem"
+                      >
                         Strawberry
                       </A.CompositeItem>
                     </li>
@@ -43,7 +55,9 @@ export function App() {
                 </A.DisclosureProvider>
               </li>
               <li>
-                <A.CompositeItem render={<a href="#" />}>Apple</A.CompositeItem>
+                <A.CompositeItem render={<a href="#" />} className="nav-item">
+                  Apple
+                </A.CompositeItem>
               </li>
             </A.Composite>
           </A.CompositeProvider>
