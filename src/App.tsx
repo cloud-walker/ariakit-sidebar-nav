@@ -1,34 +1,52 @@
+import * as A from '@ariakit/react'
+
 export function App() {
   return (
     <div className="main-layout">
       <aside className="main-sidebar">
         <h1>My sidebar</h1>
         <nav>
-          <ul>
-            <li>
-              <a href="#">Banana</a>
-            </li>
-            <li>
-              <a href="#">Orange</a>
-            </li>
-            <li>
-              <button type="button">Berries</button>
-              <ul>
-                <li>
-                  <a href="#">Blueberry</a>
-                </li>
-                <li>
-                  <a href="#">Raspberry</a>
-                </li>
-                <li>
-                  <a href="#">Strawberry</a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a href="#">Apple</a>
-            </li>
-          </ul>
+          <A.CompositeProvider>
+            <A.Composite render={<ul />}>
+              <li>
+                <A.CompositeItem render={<a href="#" />}>
+                  Banana
+                </A.CompositeItem>
+              </li>
+              <li>
+                <A.CompositeItem render={<a href="#" />}>
+                  Orange
+                </A.CompositeItem>
+              </li>
+              <li>
+                <A.DisclosureProvider>
+                  <A.Disclosure render={<A.CompositeItem />}>
+                    Berries
+                  </A.Disclosure>
+                  <A.DisclosureContent render={<ul />} unmountOnHide>
+                    <li>
+                      <A.CompositeItem render={<a href="#" />}>
+                        Blueberry
+                      </A.CompositeItem>
+                    </li>
+                    <li>
+                      <A.CompositeItem render={<a href="#" />}>
+                        Raspberry
+                      </A.CompositeItem>
+                    </li>
+                    <li>
+                      <A.CompositeItem render={<a href="#" />}>
+                        Strawberry
+                      </A.CompositeItem>
+                    </li>
+                  </A.DisclosureContent>
+                </A.DisclosureProvider>
+              </li>
+              <li>
+                <A.CompositeItem render={<a href="#" />}>Apple</A.CompositeItem>
+              </li>
+            </A.Composite>
+          </A.CompositeProvider>
         </nav>
       </aside>
       <main>
