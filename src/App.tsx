@@ -2,6 +2,7 @@ export function App() {
   return (
     <div className="main-layout">
       <aside className="main-sidebar">
+        <h1>My sidebar</h1>
         <nav>
           <ul>
             <li>
@@ -31,6 +32,7 @@ export function App() {
         </nav>
       </aside>
       <main>
+        <h1>My main</h1>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos enim ea
         qui delectus quibusdam iure fugiat voluptatem cum excepturi
         necessitatibus blanditiis ab aliquid inventore, impedit numquam

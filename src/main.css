@@ -27,4 +27,5 @@ body,
 .main-sidebar {
   background-color: #222;
   border-radius: 1rem;
+  padding: 1rem;
 }
