@@ -14,12 +14,19 @@ export function NavDisclosure({
   label: string
 }) {
   return (
-    <box.li css={{display: 'flex', flexDirection: 'column', gap: '1'}}>
+    <box.li
+      css={{display: 'flex', flexDirection: 'column', gap: '1'}}
+      className="group"
+    >
       <A.DisclosureProvider>
         <A.Disclosure
           {...props}
           render={<A.CompositeItem />}
-          className={cx('group', props.className, navItemRecipe())}
+          className={cx(
+            'group',
+            props.className,
+            navItemRecipe({mode: 'disclosure'}),
+          )}
         >
           {icon}
           {label}

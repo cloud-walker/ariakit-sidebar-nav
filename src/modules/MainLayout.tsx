@@ -19,7 +19,7 @@ export function MainLayout() {
       <box.aside
         css={{
           backgroundColor: 'slate.900',
-          padding: '6',
+          padding: '4',
           rounded: 'lg',
           display: 'flex',
           flexDirection: 'column',
