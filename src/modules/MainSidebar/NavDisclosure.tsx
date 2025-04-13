@@ -2,8 +2,8 @@ import * as A from '@ariakit/react'
 import {FiChevronDown} from 'react-icons/fi'
 
 import {css, cx} from '../../../styled-system/css'
-import {navItemRecipe} from './navItemRecipe'
 import {box} from '../../../styled-system/jsx'
+import {navItemRecipe} from './navItemRecipe'
 
 export function NavDisclosure({
   icon,
