@@ -38,8 +38,6 @@ export const navItemRecipe = cva({
         _currentPage: selectedState,
       },
       sublink: {
-        paddingInlineEnd: '3',
-        paddingInlineStart: '8',
         _currentPage: {
           color: 'indigo.400',
         },
@@ -49,9 +47,33 @@ export const navItemRecipe = cva({
         '.group:has([aria-current="page"]) &': selectedState,
       },
     },
+    isExpanded: {
+      true: {},
+      false: {
+        paddingInline: '1.5',
+      },
+    },
   },
+  compoundVariants: [
+    {
+      mode: 'link',
+      isExpanded: true,
+      css: {
+        paddingInline: '3',
+      },
+    },
+    {
+      mode: 'sublink',
+      isExpanded: true,
+      css: {
+        paddingInlineEnd: '3',
+        paddingInlineStart: '8',
+      },
+    },
+  ],
   defaultVariants: {
     mode: 'link',
+    isExpanded: true,
   },
 })
 

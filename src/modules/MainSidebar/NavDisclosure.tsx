@@ -8,11 +8,53 @@ import {navItemRecipe} from './navItemRecipe'
 export function NavDisclosure({
   icon,
   label,
+  isExpanded,
   ...props
-}: React.ComponentPropsWithRef<typeof A.Disclosure> & {
+}: React.ComponentPropsWithRef<'button'> & {
   icon: React.ReactElement
   label: string
+  isExpanded: boolean
 }) {
+  if (!isExpanded) {
+    return (
+      <li className="group">
+        <A.PopoverProvider placement="right-start">
+          <A.PopoverDisclosure
+            {...props}
+            render={<A.CompositeItem />}
+            aria-label={label}
+            className={cx(
+              props.className,
+              navItemRecipe({mode: 'disclosure', isExpanded}),
+            )}
+          >
+            {icon}
+          </A.PopoverDisclosure>
+          <A.Popover
+            gutter={8}
+            className={css({
+              backgroundColor: 'slate.800',
+              shadow: 'lg',
+              rounded: 'lg',
+              padding: '4',
+            })}
+            focusable={false}
+            render={<ul />}
+          >
+            <A.PopoverHeading
+              className={css({
+                color: 'gray.400',
+              })}
+            >
+              {label}
+            </A.PopoverHeading>
+            {props.children}
+          </A.Popover>
+        </A.PopoverProvider>
+      </li>
+    )
+  }
+
   return (
     <box.li
       css={{display: 'flex', flexDirection: 'column', gap: '1'}}
@@ -25,11 +67,11 @@ export function NavDisclosure({
           className={cx(
             'group',
             props.className,
-            navItemRecipe({mode: 'disclosure'}),
+            navItemRecipe({mode: 'disclosure', isExpanded}),
           )}
         >
           {icon}
-          {label}
+          <span>{label}</span>
           <FiChevronDown
             className={css({
               marginInlineStart: 'auto',
@@ -49,7 +91,6 @@ export function NavDisclosure({
               }}
             />
           }
-          unmountOnHide
         >
           {props.children}
         </A.DisclosureContent>
