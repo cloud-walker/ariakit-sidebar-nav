@@ -11,7 +11,7 @@
     "preview": "vite preview"
   },
   "stackblitz": {
-    "startCommand": "pnpm i && panda codegen && pnpm dev"
+    "startCommand": "panda codegen && pnpm dev"
   },
   "dependencies": {
     "react": "^19.0.0",
